@@ -1,0 +1,404 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  position: relative;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+
+.box {
+  position: relative;
+  width: 300px;
+  height: 600px;
+  background: radial-gradient(#ccc, #666, #222);
+  border-radius: 50px;
+}
+
+.box::before {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  background: #000;
+  border-radius: 48px;
+}
+
+.btn {
+  position: absolute;
+  top: 110px;
+  left: -1px;
+  width: 1px;
+  height: 26px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  background: radial-gradient(#ccc, #666, #222);
+}
+
+.btn2 {
+  top: 160px;
+  height: 40px;
+}
+
+.btn3 {
+  top: 220px;
+  height: 40px;
+}
+
+.rightSideBtn {
+  position: absolute;
+  top: 170px;
+  right: -1px;
+  width: 1px;
+  height: 70px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  background: radial-gradient(#ccc, #666, #222);
+  z-index: 10;
+}
+
+.inner {
+  position: absolute;
+  inset: 3px;
+  background: url("./img/ios17-wallpaper.webp");
+  background-size: cover;
+  background-position: center;
+  border-radius: 48px;
+  border: 7px solid #000;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.box:hover .inner {
+  opacity: 1;
+}
+
+.box:hover .inner .island-popup {
+  transition-delay: .5s;
+  width: 90px;
+  height: 25px;
+}
+
+.island-popup {
+  border: 0;
+  position: absolute;
+  top: 10px;
+  width: 120px;
+  height: 25px;
+  background: #000;
+  border-radius: 20px;
+  transition: 0.3s ease-out;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.island-popup .fa-lock-open {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  border-radius: 50%;
+  color: white;
+  font-size: 10px;
+  padding: 4px;
+  transition: 1s ease-in;
+  opacity: 1;
+}
+
+.box:hover .inner .island-popup .fa-lock-open {
+  transition-delay: 0.1s;
+  opacity: 0;
+}
+
+.island-popup .fa-lightbulb {
+  border: 0;
+  filter: drop-shadow(0 0 3px white) blur(0.5px);
+  background-color: #8C8C8C;
+  position: absolute;
+  top: 3px;
+  left: 5px;
+  border-radius: 50%;
+  color: white;
+  font-size: 10px;
+  padding: 4px;
+  transform: scaleX(1.2);
+  animation-name: delay;
+  animation-duration: 1s;
+}
+
+@keyframes delay {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.mobile-carrier {
+  position: absolute;
+  top: 13px;
+  left: 40px;
+  color: white;
+  font-size: 11px;
+  transition: 0.3s ease-out;
+}
+
+.box:hover .mobile-carrier {
+  transition-delay: 0.5s;
+  transform: translate(5px);
+}
+
+.signal {
+  position: absolute;
+  top: 13px;
+  right: 58px;
+  color: white;
+  font-size: 11px;
+}
+
+.signal {
+  transition: 0.3s ease-out;
+}
+
+.box:hover .signal {
+  transition-delay: 0.5s;
+  transform: translate(-5px);
+}
+
+.wifi {
+  position: absolute;
+  top: 13px;
+  right: 40px;
+  color: white;
+  font-size: 11px;
+}
+
+.wifi {
+  transition: 0.3s ease-out;
+}
+
+.box:hover .wifi {
+  transition-delay: 0.5s;
+  transform: translate(-5px);
+}
+
+.battery {
+  position: absolute;
+  top: 13px;
+  right: 22px;
+  color: #3EDE63;
+  scale: 1.8 1;
+  font-size: 10px;
+}
+
+.battery {
+  transition: 0.3s ease-out;
+}
+
+.box:hover .battery {
+  transition-delay: 0.5s;
+  transform: translate(-3px);
+}
+
+.today {
+  position: absolute;
+  top: 50px;
+  width: 120px;
+  height: 25px;
+  background: rgba(0, 0, 0, 0);
+  opacity: 0.8;
+  color: white;
+  font-weight: 400;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.current-time {
+  position: absolute;
+  top: 80px;
+  width: 160px;
+  height: 60px;
+  background: rgba(0, 0, 0, 0);
+  opacity: 0.8;
+  color: white;
+  font-weight: 500;
+  font-size: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flash-light {
+  position: absolute;
+  top: 510px;
+  width: 30px;
+  height: 30px;
+  left: 40px;
+  background: black;
+  opacity: 0.5;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition-duration: 0.2s;
+}
+
+.flash-light .fa-lightbulb {
+  font-size: 16px;
+}
+
+.flash-light:active {
+  scale: 1.7;
+}
+
+.camera {
+  position: absolute;
+  top: 510px;
+  width: 30px;
+  height: 30px;
+  right: 40px;
+  background: black;
+  opacity: 0.5;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition-duration: 0.2s;
+}
+
+.camera .fa-camera {
+  font-size: 16px;
+}
+
+.camera:active {
+  scale: 1.7;
+}
+
+.click {
+  opacity: 1;
+  color: black;
+  background-color: white;
+  animation-name: bounce;
+  animation-duration: 0.3s;
+  animation-delay: 0.1s;
+}
+
+@keyframes bounce {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.1;
+  }
+  100% {
+    scale: 1;
+  }
+}
+
+.slide-bar {
+  position: absolute;
+  top: 572px;
+  width: 90px;
+  height: 4px;
+  background-color: white;
+  border: 0;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.slide-bar-text {
+  position: absolute;
+  top: 568px;
+  width: 77px;
+  height: 8px;
+  font-size: 8px;
+  font-weight: 900;
+  color: white;
+  border: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+}
+
+.box:hover .slide-bar {
+  animation-name: bar;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+}
+
+.box:hover .slide-bar-text {
+  opacity: 0;
+  animation-name: textbar;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bar {
+  0% {
+    top: 572px;
+  }
+  40%{
+    top: 572px;
+    animation-timing-function: ease;
+  }
+  60% {
+    top: 562px;
+    animation-timing-function: linear;
+  }
+  90% {
+    top: 572px;
+  }
+  100% {
+    top: 572px;
+  }
+}
+
+@keyframes textbar {
+  0% {
+    top: 568px;
+    opacity: 0;
+  }
+  40%{
+    top: 568px;
+    animation-timing-function: ease;
+    opacity: 0;
+  }
+  60% {
+    top: 546px;
+    opacity: 1;
+  }
+  90% {
+    top: 546px;
+    opacity: 1;
+  }
+  100% {
+    top: 546px;
+    opacity: 0;
+  }
+}
